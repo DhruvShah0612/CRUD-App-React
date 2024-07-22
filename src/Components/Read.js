@@ -13,6 +13,14 @@ function Read() {
       });
   }
 
+  function handleDelete(id) {
+    axios
+      .delete(`https://669e1e889a1bda36800573da.mockapi.io/CRUD/${id}`)
+      .then(() => {
+        getData();
+      });
+  }
+
   useEffect(() => {
     getData();
   }, []);
@@ -51,7 +59,20 @@ function Read() {
                         <button className="btn btn-warning">Edit</button>
                       </td>
                       <td>
-                        <button className="btn btn-danger">Delete</button>
+                        <button
+                          className="btn btn-danger"
+                          onClick={() => {
+                            if (
+                              window.confirm(
+                                "Are you sure you want to delete this record?"
+                              )
+                            ) {
+                              handleDelete(item.id);
+                            }
+                          }}
+                        >
+                          Delete
+                        </button>
                       </td>
                     </tr>
                   </>
