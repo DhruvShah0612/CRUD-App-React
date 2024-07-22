@@ -50,4 +50,5 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 ## Acknowledgments
 
 - Thanks to [MockAPI](https://mockapi.io) for providing a platform to create mock APIs for testing and prototyping.
-- Special thanks to all contributors and supporters of the project.
+- Gratitude towards [React](https://reactjs.org/) for the efficient and flexible JavaScript library for building user interfaces.
+- Appreciation for [Bootstrap](https://getbootstrap.com/) for its extensive library that helps in developing responsive and mobile-first websites quickly.
