@@ -1,20 +1,27 @@
 import React from "react";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
-function Create() {
+function Update() {
+  const [id, setId] = useState(0);
   const [name, setName] = useState("");
-  const [age, setAge] = useState("");
+  const [age, setAge] = useState(0);
   const [email, setEmail] = useState("");
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    setId(localStorage.getItem("id"));
+    setName(localStorage.getItem("name"));
+    setAge(localStorage.getItem("age"));
+    setEmail(localStorage.getItem("email"));
+  }, []);
+
+  function handleUpdate(e) {
     e.preventDefault();
     axios
-      .post("https://669e1e889a1bda36800573da.mockapi.io/CRUD", {
+      .put(`https://669e1e889a1bda36800573da.mockapi.io/CRUD/${id}`, {
         e_name: name,
         e_age: age,
         e_email: email,
@@ -25,7 +32,7 @@ function Create() {
       .catch((error) => {
         console.log(error);
       });
-  };
+  }
 
   return (
     <>
@@ -37,51 +44,48 @@ function Create() {
             </Link>
           </div>
           <div className="bg-primary p-2 text-center">
-            <h1>Create Data</h1>
+            <h1>Update Data</h1>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleUpdate}>
             <div className="form-group">
               <label>Enter Name:</label>
               <input
                 type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 placeholder="Name"
                 className="form-control"
-                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="form-group">
               <label>Enter Age:</label>
               <input
                 type="number"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
                 placeholder="Age"
                 className="form-control"
-                onChange={(e) => setAge(e.target.value)}
               />
             </div>
             <div className="form-group">
               <label>Enter Email:</label>
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
                 className="form-control"
-                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <br />
             <div className="d-grid">
-              <input type="submit" value="Submit" className="btn btn-primary" />
+              <input type="submit" value="Update" className="btn btn-primary" />
             </div>
           </form>
-
-          {/* {name}
-          <br />
-          {age}
-          <br />
-          {email} */}
         </div>
       </div>
     </>
   );
 }
 
-export default Create;
+export default Update;

@@ -10,6 +10,9 @@ function Read() {
       .get("https://669e1e889a1bda36800573da.mockapi.io/CRUD")
       .then((response) => {
         setApiData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }
 
@@ -18,7 +21,17 @@ function Read() {
       .delete(`https://669e1e889a1bda36800573da.mockapi.io/CRUD/${id}`)
       .then(() => {
         getData();
+      })
+      .catch((error) => {
+        console.log(error);
       });
+  }
+
+  function setDataToStorage(id, name, age, email) {
+    localStorage.setItem("id", id);
+    localStorage.setItem("name", name);
+    localStorage.setItem("age", age);
+    localStorage.setItem("email", email);
   }
 
   useEffect(() => {
@@ -56,7 +69,21 @@ function Read() {
                       <td> {item.e_age}</td>
                       <td> {item.e_email}</td>
                       <td>
-                        <button className="btn btn-warning">Edit</button>
+                        <Link to={`/update`}>
+                          <button
+                            className="btn btn-primary"
+                            onClick={() =>
+                              setDataToStorage(
+                                item.id,
+                                item.e_name,
+                                item.e_age,
+                                item.e_email
+                              )
+                            }
+                          >
+                            Edit
+                          </button>
+                        </Link>
                       </td>
                       <td>
                         <button
