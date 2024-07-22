@@ -2,6 +2,18 @@
 
 This is a CRUD (Create, Read, Update, Delete) application built with React. It utilizes Axios for API requests, React Router for routing, and Bootstrap for styling.
 
+## Features
+
+- Create, Read, Update, and Delete (CRUD) operations.
+- Responsive web design.
+- Real-time data fetching and updating with Axios.
+- Client-side routing with React Router.
+
+## Technologies Used
+
+- **React**: A JavaScript library for building user interfaces.
+- **Bootstrap**: Front-end framework for developing responsive, mobile first projects on the web.
+
 ## Getting Started
 
 ### Prerequisites
@@ -28,15 +40,15 @@ Before running this project, make sure you have Node.js and npm (Node Package Ma
    npm start
    ```
 
+4. After starting the development server, you can view the application by navigating to [http://localhost:3001/](http://localhost:3001/) in your web browser.
 
-4. After starting the development server, you can view the application by navigating to [http://localhost:3000/](http://localhost:3000/) in your web browser.
 
-5. **Setting up the API**
+## License
 
-   The application uses the following mock API for CRUD operations:
+This project is licensed under the MIT License - see the LICENSE.md file for details.
 
-   ```
-   https://669e1e889a1bda36800573da.mockapi.io/CRUD
-   ```
+## Acknowledgments
 
-   You can view the API data directly by visiting [https://669e1e889a1bda36800573da.mockapi.io/CRUD](https://669e1e889a1bda36800573da.mockapi.io/CRUD) in your web browser.
+- Thanks to [MockAPI](https://mockapi.io) for providing a platform to create mock APIs for testing and prototyping.
+- Gratitude towards [React](https://reactjs.org/) for the efficient and flexible JavaScript library for building user interfaces.
+- Appreciation for [Bootstrap](https://getbootstrap.com/) for its extensive library that helps in developing responsive and mobile-first websites quickly.
