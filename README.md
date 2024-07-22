@@ -42,10 +42,6 @@ Before running this project, make sure you have Node.js and npm (Node Package Ma
 
 4. After starting the development server, you can view the application by navigating to [http://localhost:3001/](http://localhost:3001/) in your web browser.
 
-## Demo
-
-<!-- <video controls src="assets/crud vidio.mp4" title="Demo"></video> -->
-![alt text](<assets/crud vidio.gif>)
 
 ## License
 
