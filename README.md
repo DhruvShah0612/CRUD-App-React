@@ -2,6 +2,9 @@
 
 This is a CRUD (Create, Read, Update, Delete) application built with React. It utilizes Axios for API requests, React Router for routing, and Bootstrap for styling.
 
+# Demo
+![Demo Screenshot](Assets/Read-data.png)
+
 ## Features
 
 - Create, Read, Update, and Delete (CRUD) operations.
@@ -39,8 +42,6 @@ Before running this project, make sure you have Node.js and npm (Node Package Ma
    ```bash
    npm start
    ```
-
-4. After starting the development server, you can view the application by navigating to [http://localhost:3001/](http://localhost:3001/) in your web browser.
 
 
 ## License
